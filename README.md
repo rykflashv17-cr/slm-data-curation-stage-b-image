@@ -13,9 +13,13 @@ repository, so its archive is distributed here as a private Release asset.
 - Container definition revision: [`32302b7`](https://github.com/rykflashv17-cr/slm-data-curation-stage-b-operators/commit/32302b7)
 - Archive SHA-256: `51d99d80b92986da095bd659b4ce4b76e22c76a0121c6443ad9374ca9635edcb`
 
-Download the `.tar.gz` archive and `.sha256` file from the Release, then run:
+Download all numbered `part-00` through `part-11` assets and both `.sha256`
+files from the Release, then run in the download directory:
 
 ```bash
+sha256sum -c egostandard-stage-b-operators_20261020_amd64.parts.sha256
+cat egostandard-stage-b-operators_20261020_amd64.tar.gz.part-* \
+  > egostandard-stage-b-operators_20261020_amd64.tar.gz
 sha256sum -c egostandard-stage-b-operators_20261020_amd64.sha256
 docker load -i egostandard-stage-b-operators_20261020_amd64.tar.gz
 ```
